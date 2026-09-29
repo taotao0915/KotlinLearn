@@ -3,6 +3,7 @@
     <string name="app_name">Kotlin 学习小站</string>
     <string name="lesson_one">第一课</string>
     <string name="lesson_two">第二课</string>
+    <string name="lesson_three">第三课</string>
     <string name="lesson_title">第 1 课 · 变量与字符串</string>
     <string name="lesson_intro">从几行 Kotlin 开始，修改代码，观察结果。</string>
     <string name="concepts_title">本课要点</string>
@@ -17,4 +18,9 @@
     <string name="lesson_two_concepts">String：文字，例如商品名。\nInt：整数，例如购买数量。\nDouble：浮点数，例如 12.5。\nBoolean：true 或 false，例如预算是否足够。\n\n注意：10 / 3 的结果是 3，10.0 / 3 才会保留小数。</string>
     <string name="run_lesson_two">运行第二课</string>
     <string name="lesson_two_exercise">动手练习：打开 Lesson02.kt，把 quantity 从 3 改成 4，再重新构建并运行。先预测总价与预算是否足够，再查看结果。\n\n修改源码后需要重新运行 App；反复点击按钮会使用同一组初始数据重新计算。</string>
+    <string name="lesson_three_title">第 3 课 · if 与 when 条件判断</string>
+    <string name="lesson_three_intro">把计算结果变成提示：预算足够、刚好够，还是还差一些？</string>
+    <string name="lesson_three_concepts">if / else：根据条件选择两个分支之一。\nwhen：依次检查条件，选择第一个匹配的分支。\n== 判断是否相等，= 用于赋值。\n\n把结果保存到变量时，要覆盖所有可能的情况。</string>
+    <string name="run_lesson_three">运行第三课</string>
+    <string name="lesson_three_exercise">动手练习：打开 Lesson03.kt，依次把 quantity 改成 3、4、5。每次先预测两条提示，再重新构建运行。\n\n特别观察数量为 4 时：预算刚好够，if 中的 &gt;= 包含相等的情况。</string>
 </resources>
