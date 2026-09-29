@@ -4,6 +4,7 @@
     <string name="lesson_one">第一课</string>
     <string name="lesson_two">第二课</string>
     <string name="lesson_three">第三课</string>
+    <string name="lesson_four">第四课</string>
     <string name="lesson_title">第 1 课 · 变量与字符串</string>
     <string name="lesson_intro">从几行 Kotlin 开始，修改代码，观察结果。</string>
     <string name="concepts_title">本课要点</string>
@@ -23,4 +24,9 @@
     <string name="lesson_three_concepts">if / else：根据条件选择两个分支之一。\nwhen：依次检查条件，选择第一个匹配的分支。\n== 判断是否相等，= 用于赋值。\n\n把结果保存到变量时，要覆盖所有可能的情况。</string>
     <string name="run_lesson_three">运行第三课</string>
     <string name="lesson_three_exercise">动手练习：打开 Lesson03.kt，依次把 quantity 改成 3、4、5。每次先预测两条提示，再重新构建运行。\n\n特别观察数量为 4 时：预算刚好够，if 中的 &gt;= 包含相等的情况。</string>
+    <string name="lesson_four_title">第 4 课 · for、while 与范围</string>
+    <string name="lesson_four_intro">自动计算买 1～5 本的总价，再模拟每天存钱直到达到目标。</string>
+    <string name="lesson_four_concepts">for：依次处理范围中的每个值。\n1..5：包含 1 和 5，共五个整数。\nwhile：每轮开始前检查条件，成立才执行。\n\n观察循环中变量如何变化，以及循环什么时候停止。</string>
+    <string name="run_lesson_four">运行第四课</string>
+    <string name="lesson_four_exercise">动手练习：打开 Lesson04.kt，把 1..5 改成 1..8，并同步修改结果标题。再把 dailySaving 从 10 改成 7，预测存到 35 元需要几天。\n\n修改后重新构建运行。每天存入的金额保持为正整数，保留 while 中更新余额的那一行。</string>
 </resources>
