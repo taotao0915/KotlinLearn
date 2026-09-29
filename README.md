@@ -15,6 +15,8 @@
 
 接着学习 [第四课：for、while 与范围](docs/04-for与while循环.md)，自动计算买 1～5 本的情况，并模拟每天存钱直到达到目标。练习文件是 `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson04/Lesson04.kt`。
 
+[第五课：函数、参数和返回值](docs/05-函数参数与返回值.md) 将总价计算和预算判断写成可复用的函数。练习文件是 `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson05/Lesson05.kt`。
+
 ### 方式 A：在电脑上练习（无需 Android 设备）
 
 在 Android Studio 的 Terminal 中使用 PowerShell 执行：
@@ -62,11 +64,19 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 
 也可以在 `Lesson04.kt` 中运行 `main()`。观察 `for` 的五轮购物计算和 `while` 的四轮储蓄过程。
 
+第五课的运行命令：
+
+```powershell
+.\gradlew.bat :basics:runLesson05 --console=plain
+```
+
+也可以在 `Lesson05.kt` 中运行 `main()`。先读计算总价的函数定义，再对照调用位置理解参数和返回值。
+
 ### 方式 B：在 Android App 中练习
 
 1. 连接已开启 USB 调试的 Android 7.0 或更新版本手机，并在手机上允许调试；或在 Android Studio 的 Device Manager 中创建并启动模拟器。
 2. 在顶部选择 `app` 和目标设备，点击绿色 Run 按钮。
-3. App 顶部可选择 **第一课** 到 **第四课**，再点击相应的运行按钮。首次打开默认显示第四课，切换课程会清空旧结果；课程按钮区域可以横向滚动。
+3. App 顶部可选择 **第一课** 到 **第五课**，再点击相应的运行按钮。首次打开默认显示第五课，切换课程会清空旧结果；课程按钮区域可以横向滚动。
 4. 修改各课的 Kotlin 源文件后，需要再次 Run 来重新构建安装；已经安装的 App 不会自动读取电脑上的源码。
 
 ## 今天需要认识的文件
@@ -81,6 +91,8 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 | `docs/03-if与when条件判断.md` | 第三课讲解、分支顺序与边界练习 |
 | `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson04/Lesson04.kt` | 第四课：重复计算和模拟储蓄 |
 | `docs/04-for与while循环.md` | 第四课讲解、循环过程与范围练习 |
+| `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson05/Lesson05.kt` | 第五课：定义函数并传入不同数据 |
+| `docs/05-函数参数与返回值.md` | 第五课讲解、调用过程与函数编写练习 |
 | `docs/学习路线.md` | 后续学习顺序 |
 | `app/src/main/java/com/example/kotlinlearn/MainActivity.kt` | Android 界面，先保持原样 |
 | `app/src/main/AndroidManifest.xml` | Android 应用和启动页面的声明 |
@@ -93,7 +105,7 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 先按上面的命令设置当前终端的 `JAVA_HOME`，然后执行：
 
 ```powershell
-.\gradlew.bat :basics:run :basics:runLesson02 :basics:runLesson03 :basics:runLesson04 :app:assembleDebug :app:lintDebug --console=plain
+.\gradlew.bat :basics:run :basics:runLesson02 :basics:runLesson03 :basics:runLesson04 :basics:runLesson05 :app:assembleDebug :app:lintDebug --console=plain
 ```
 
 APK 生成位置：`app/build/outputs/apk/debug/app-debug.apk`。

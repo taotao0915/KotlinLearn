@@ -46,3 +46,12 @@ tasks.register<JavaExec>("runLesson04") {
     mainClass.set("com.example.kotlinlearn.basics.lesson04.Lesson04Kt")
     jvmArgs("-Dfile.encoding=UTF-8")
 }
+
+tasks.register<JavaExec>("runLesson05") {
+    group = "application"
+    description = "运行第五课：函数、参数和返回值"
+    dependsOn(tasks.named("classes"))
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("com.example.kotlinlearn.basics.lesson05.Lesson05Kt")
+    jvmArgs("-Dfile.encoding=UTF-8")
+}

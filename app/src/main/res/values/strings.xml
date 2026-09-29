@@ -5,6 +5,7 @@
     <string name="lesson_two">第二课</string>
     <string name="lesson_three">第三课</string>
     <string name="lesson_four">第四课</string>
+    <string name="lesson_five">第五课</string>
     <string name="lesson_title">第 1 课 · 变量与字符串</string>
     <string name="lesson_intro">从几行 Kotlin 开始，修改代码，观察结果。</string>
     <string name="concepts_title">本课要点</string>
@@ -29,4 +30,9 @@
     <string name="lesson_four_concepts">for：依次处理范围中的每个值。\n1..5：包含 1 和 5，共五个整数。\nwhile：每轮开始前检查条件，成立才执行。\n\n观察循环中变量如何变化，以及循环什么时候停止。</string>
     <string name="run_lesson_four">运行第四课</string>
     <string name="lesson_four_exercise">动手练习：打开 Lesson04.kt，把 1..5 改成 1..8，并同步修改结果标题。再把 dailySaving 从 10 改成 7，预测存到 35 元需要几天。\n\n修改后重新构建运行。每天存入的金额保持为正整数，保留 while 中更新余额的那一行。</string>
+    <string name="lesson_five_title">第 5 课 · 函数、参数和返回值</string>
+    <string name="lesson_five_intro">定义一次计算方法，传入不同的单价与数量，重复使用它。</string>
+    <string name="lesson_five_concepts">fun：定义函数。\n参数：调用时传入的数据。\n返回值：函数交回的结果。\nreturn：交回结果，并结束本次函数调用。\n\n加练：默认参数与命名参数。</string>
+    <string name="run_lesson_five">运行第五课</string>
+    <string name="lesson_five_exercise">动手练习：打开 Lesson05.kt，把 runLesson05 中的 unitPrice 从 12.5 改成 15.0，先预测三种数量的总价和预算提示，再运行。\n\n进一步练习：自己定义 calculateChange(budget: Double, totalPrice: Double): Double，返回预算减总价。</string>
 </resources>
