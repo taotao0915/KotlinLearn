@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kotlin 学习小站</string>
+    <string name="lesson_one">第一课</string>
+    <string name="lesson_two">第二课</string>
     <string name="lesson_title">第 1 课 · 变量与字符串</string>
     <string name="lesson_intro">从几行 Kotlin 开始，修改代码，观察结果。</string>
-    <string name="concepts_title">今天掌握 3 件事</string>
+    <string name="concepts_title">本课要点</string>
     <string name="concepts_body">val：初始化后不能重新赋值。\nvar：可以重新赋值。\n字符串模板：把变量的值放进文字里。</string>
     <string name="run_lesson">运行第一课</string>
     <string name="output_title">运行结果</string>
-    <string name="output_placeholder">点击“运行第一课”，查看代码的输出。</string>
+    <string name="output_placeholder">点击上方运行按钮，查看本课代码的输出。</string>
     <string name="clear_output">清空结果</string>
     <string name="exercise">动手练习：打开 Lesson01.kt，把“小明”改成你的名字，再重新构建并运行 App。\n\n每次点击都会从第 1 天重新计算，因为练习中的变量是在函数内部创建的。</string>
+    <string name="lesson_two_title">第 2 课 · 基本数据类型与运算</string>
+    <string name="lesson_two_intro">一起来计算购买笔记本的总价，并判断预算是否足够。</string>
+    <string name="lesson_two_concepts">String：文字，例如商品名。\nInt：整数，例如购买数量。\nDouble：浮点数，例如 12.5。\nBoolean：true 或 false，例如预算是否足够。\n\n注意：10 / 3 的结果是 3，10.0 / 3 才会保留小数。</string>
+    <string name="run_lesson_two">运行第二课</string>
+    <string name="lesson_two_exercise">动手练习：打开 Lesson02.kt，把 quantity 从 3 改成 4，再重新构建并运行。先预测总价与预算是否足够，再查看结果。\n\n修改源码后需要重新运行 App；反复点击按钮会使用同一组初始数据重新计算。</string>
 </resources>
