@@ -41,4 +41,10 @@
     <string name="lesson_six_concepts">String?：字符串或 null。\n?.：非空时访问，空时得到 null。\n?:：左侧为 null 时使用右侧值。\ntoIntOrNull()：转换失败时得到 null。\n\nnull、空字符串和文字“null”是不同的值。</string>
     <string name="run_lesson_six">运行第六课</string>
     <string name="lesson_six_exercise">动手练习：打开 Lesson06.kt，把 nickname 从 null 改成字符串“Kotlin”，再改成空字符串，比较当前昵称的显示结果。\n\n把 quantityInput 改成“4”、“abc”、“0”对应的字符串，预测提示再运行。修改源码后需重新构建 App。</string>
+    <string name="lesson_seven">第七课</string>
+    <string name="lesson_seven_title">第 7 课 · List、Set、Map</string>
+    <string name="lesson_seven_intro">用集合保存学习任务、去重标签，并按任务名称查找预计时间。</string>
+    <string name="lesson_seven_concepts">List：有顺序，可重复，索引从 0 开始。\nSet：保存不重复的元素。\nMap：按键查找值，键唯一。\nMutableList：支持增删改。\n\nval 限制重新赋值，不禁止修改可变集合内容。</string>
+    <string name="run_lesson_seven">运行第七课</string>
+    <string name="lesson_seven_exercise">动手练习：打开 Lesson07.kt，在 tasks 中增加一个任务；在 tags 中增加重复标签和新标签，比较数量变化。\n\n把 selectedTask 改成“运行 App”，再为它添加 15 分钟的安排。先预测查询结果，再重新构建运行。</string>
 </resources>

@@ -19,6 +19,8 @@
 
 [第六课：可空类型与空值处理](docs/06-可空类型与空值处理.md) 用昵称和数量输入练习 `String?`、`?.`、`?:` 以及转换失败的处理。练习文件是 `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson06/Lesson06.kt`。
 
+[第七课：List、Set、Map](docs/07-集合ListSetMap.md) 用待办清单练习集合读取、遍历与增删改。练习文件是 `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson07/Lesson07.kt`。
+
 ### 方式 A：在电脑上练习（无需 Android 设备）
 
 在 Android Studio 的 Terminal 中使用 PowerShell 执行：
@@ -82,11 +84,19 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 
 也可以在 `Lesson06.kt` 中运行 `main()`。比较 null、空字符串、普通字符串，以及不同数量输入的结果。
 
+第七课的运行命令：
+
+```powershell
+.\gradlew.bat :basics:runLesson07 --console=plain
+```
+
+也可以在 `Lesson07.kt` 中运行 `main()`。观察列表重复元素、标签去重与按键查找的区别。
+
 ### 方式 B：在 Android App 中练习
 
 1. 连接已开启 USB 调试的 Android 7.0 或更新版本手机，并在手机上允许调试；或在 Android Studio 的 Device Manager 中创建并启动模拟器。
 2. 在顶部选择 `app` 和目标设备，点击绿色 Run 按钮。
-3. App 顶部可选择 **第一课** 到 **第六课**，再点击相应的运行按钮。首次打开默认显示第六课，切换课程会清空旧结果；课程按钮区域可以横向滚动。
+3. App 顶部可选择 **第一课** 到 **第七课**，再点击相应的运行按钮。首次打开默认显示第七课，切换课程会清空旧结果；课程按钮区域可以横向滚动。
 4. 修改各课的 Kotlin 源文件后，需要再次 Run 来重新构建安装；已经安装的 App 不会自动读取电脑上的源码。
 
 ## 今天需要认识的文件
@@ -105,6 +115,8 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 | `docs/05-函数参数与返回值.md` | 第五课讲解、调用过程与函数编写练习 |
 | `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson06/Lesson06.kt` | 第六课：处理缺失昵称与无效数量输入 |
 | `docs/06-可空类型与空值处理.md` | 第六课讲解、空值对照与输入转换练习 |
+| `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson07/Lesson07.kt` | 第七课：用集合管理学习待办 |
+| `docs/07-集合ListSetMap.md` | 第七课讲解、集合比较与练习 |
 | `docs/学习路线.md` | 后续学习顺序 |
 | `app/src/main/java/com/example/kotlinlearn/MainActivity.kt` | Android 界面，先保持原样 |
 | `app/src/main/AndroidManifest.xml` | Android 应用和启动页面的声明 |
@@ -117,7 +129,7 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 先按上面的命令设置当前终端的 `JAVA_HOME`，然后执行：
 
 ```powershell
-.\gradlew.bat :basics:run :basics:runLesson02 :basics:runLesson03 :basics:runLesson04 :basics:runLesson05 :basics:runLesson06 :app:assembleDebug :app:lintDebug --console=plain
+.\gradlew.bat :basics:run :basics:runLesson02 :basics:runLesson03 :basics:runLesson04 :basics:runLesson05 :basics:runLesson06 :basics:runLesson07 :app:assembleDebug :app:lintDebug --console=plain
 ```
 
 APK 生成位置：`app/build/outputs/apk/debug/app-debug.apk`。
