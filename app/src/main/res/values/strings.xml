@@ -47,4 +47,10 @@
     <string name="lesson_seven_concepts">List：有顺序，可重复，索引从 0 开始。\nSet：保存不重复的元素。\nMap：按键查找值，键唯一。\nMutableList：支持增删改。\n\nval 限制重新赋值，不禁止修改可变集合内容。</string>
     <string name="run_lesson_seven">运行第七课</string>
     <string name="lesson_seven_exercise">动手练习：打开 Lesson07.kt，在 tasks 中增加一个任务；在 tags 中增加重复标签和新标签，比较数量变化。\n\n把 selectedTask 改成“运行 App”，再为它添加 15 分钟的安排。先预测查询结果，再重新构建运行。</string>
+    <string name="lesson_eight">第八课</string>
+    <string name="lesson_eight_title">第 8 课 · 类、data class 与接口</string>
+    <string name="lesson_eight_intro">把任务名称、时间和完成状态放进对象，用同一个接口描述学习者与任务。</string>
+    <string name="lesson_eight_concepts">class：定义对象的属性与行为。\ndata class：适合保存数据，自动提供比较和复制等功能。\ncopy：创建新对象，原对象保持原来的值。\ninterface：约定共同能力，用 override 实现。\n\n本例中 == 比较数据，=== 比较是否同一个对象。</string>
+    <string name="run_lesson_eight">运行第八课</string>
+    <string name="lesson_eight_exercise">动手练习：打开 Lesson08.kt，把 task 的 minutes 从 20 改成 30，观察副本和剩余时间。\n\n再把任务列表中的 task 改成 finishedTask，先预测剩余时间，再重新构建运行。示例课数从 0 开始，不代表实际学习进度。</string>
 </resources>

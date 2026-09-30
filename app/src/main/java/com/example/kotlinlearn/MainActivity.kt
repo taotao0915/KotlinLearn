@@ -41,9 +41,10 @@ import com.example.kotlinlearn.basics.lesson04.runLesson04
 import com.example.kotlinlearn.basics.lesson05.runLesson05
 import com.example.kotlinlearn.basics.lesson06.runLesson06
 import com.example.kotlinlearn.basics.lesson07.runLesson07
+import com.example.kotlinlearn.basics.lesson08.runLesson08
 
 // 学习 Kotlin 基础时，先把这个文件当作“显示练习结果的窗口”。
-// 你要修改的练习代码在 basics 模块中，各课对应 Lesson01.kt 到 Lesson07.kt。
+// 你要修改的练习代码在 basics 模块中，各课对应 Lesson01.kt 到 Lesson08.kt。
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +72,7 @@ private fun KotlinLearnTheme(content: @Composable () -> Unit) {
 @Composable
 private fun LessonScreen() {
     // 这里是 Compose 的界面状态；学到 Android 界面时再详细讲解。
-    var lessonNumber by rememberSaveable { mutableIntStateOf(7) }
+    var lessonNumber by rememberSaveable { mutableIntStateOf(8) }
     // 切换课程时清空旧结果，避免把上一课的输出当成本课的结果。
     var output by rememberSaveable(lessonNumber) { mutableStateOf("") }
     val titleRes = when (lessonNumber) {
@@ -81,7 +82,8 @@ private fun LessonScreen() {
         4 -> R.string.lesson_four_title
         5 -> R.string.lesson_five_title
         6 -> R.string.lesson_six_title
-        else -> R.string.lesson_seven_title
+        7 -> R.string.lesson_seven_title
+        else -> R.string.lesson_eight_title
     }
     val introRes = when (lessonNumber) {
         1 -> R.string.lesson_intro
@@ -90,7 +92,8 @@ private fun LessonScreen() {
         4 -> R.string.lesson_four_intro
         5 -> R.string.lesson_five_intro
         6 -> R.string.lesson_six_intro
-        else -> R.string.lesson_seven_intro
+        7 -> R.string.lesson_seven_intro
+        else -> R.string.lesson_eight_intro
     }
     val conceptsRes = when (lessonNumber) {
         1 -> R.string.concepts_body
@@ -99,7 +102,8 @@ private fun LessonScreen() {
         4 -> R.string.lesson_four_concepts
         5 -> R.string.lesson_five_concepts
         6 -> R.string.lesson_six_concepts
-        else -> R.string.lesson_seven_concepts
+        7 -> R.string.lesson_seven_concepts
+        else -> R.string.lesson_eight_concepts
     }
     val runLabelRes = when (lessonNumber) {
         1 -> R.string.run_lesson
@@ -108,7 +112,8 @@ private fun LessonScreen() {
         4 -> R.string.run_lesson_four
         5 -> R.string.run_lesson_five
         6 -> R.string.run_lesson_six
-        else -> R.string.run_lesson_seven
+        7 -> R.string.run_lesson_seven
+        else -> R.string.run_lesson_eight
     }
     val exerciseRes = when (lessonNumber) {
         1 -> R.string.exercise
@@ -117,7 +122,8 @@ private fun LessonScreen() {
         4 -> R.string.lesson_four_exercise
         5 -> R.string.lesson_five_exercise
         6 -> R.string.lesson_six_exercise
-        else -> R.string.lesson_seven_exercise
+        7 -> R.string.lesson_seven_exercise
+        else -> R.string.lesson_eight_exercise
     }
 
     Scaffold { innerPadding ->
@@ -169,6 +175,11 @@ private fun LessonScreen() {
                     onClick = { lessonNumber = 7 },
                     label = { Text(stringResource(R.string.lesson_seven)) },
                 )
+                FilterChip(
+                    selected = lessonNumber == 8,
+                    onClick = { lessonNumber = 8 },
+                    label = { Text(stringResource(R.string.lesson_eight)) },
+                )
             }
             Text(
                 stringResource(titleRes),
@@ -198,7 +209,8 @@ private fun LessonScreen() {
                         4 -> runLesson04()
                         5 -> runLesson05()
                         6 -> runLesson06()
-                        else -> runLesson07()
+                        7 -> runLesson07()
+                        else -> runLesson08()
                     }
                 },
                 modifier = Modifier.fillMaxWidth(),
