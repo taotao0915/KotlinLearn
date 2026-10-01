@@ -43,9 +43,10 @@ import com.example.kotlinlearn.basics.lesson06.runLesson06
 import com.example.kotlinlearn.basics.lesson07.runLesson07
 import com.example.kotlinlearn.basics.lesson08.runLesson08
 import com.example.kotlinlearn.basics.lesson09.runLesson09
+import com.example.kotlinlearn.lesson10.Lesson10Content
 
-// 学习 Kotlin 基础时，先把这个文件当作“显示练习结果的窗口”。
-// 你要修改的练习代码在 basics 模块中，各课对应 Lesson01.kt 到 Lesson09.kt。
+// 这里是 Android 入口与课程选择页面，第十课开始学习它的界面结构。
+// 前九课在 basics 模块；第十课的名片在 app 模块的 lesson10/Lesson10Screen.kt。
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +60,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun KotlinLearnTheme(content: @Composable () -> Unit) {
+internal fun KotlinLearnTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = lightColorScheme(
             primary = Color(0xFF4256A6),
@@ -73,7 +74,7 @@ private fun KotlinLearnTheme(content: @Composable () -> Unit) {
 @Composable
 private fun LessonScreen() {
     // 这里是 Compose 的界面状态；学到 Android 界面时再详细讲解。
-    var lessonNumber by rememberSaveable { mutableIntStateOf(9) }
+    var lessonNumber by rememberSaveable { mutableIntStateOf(10) }
     // 切换课程时清空旧结果，避免把上一课的输出当成本课的结果。
     var output by rememberSaveable(lessonNumber) { mutableStateOf("") }
     val titleRes = when (lessonNumber) {
@@ -85,7 +86,8 @@ private fun LessonScreen() {
         6 -> R.string.lesson_six_title
         7 -> R.string.lesson_seven_title
         8 -> R.string.lesson_eight_title
-        else -> R.string.lesson_nine_title
+        9 -> R.string.lesson_nine_title
+        else -> R.string.lesson_ten_title
     }
     val introRes = when (lessonNumber) {
         1 -> R.string.lesson_intro
@@ -96,7 +98,8 @@ private fun LessonScreen() {
         6 -> R.string.lesson_six_intro
         7 -> R.string.lesson_seven_intro
         8 -> R.string.lesson_eight_intro
-        else -> R.string.lesson_nine_intro
+        9 -> R.string.lesson_nine_intro
+        else -> R.string.lesson_ten_intro
     }
     val conceptsRes = when (lessonNumber) {
         1 -> R.string.concepts_body
@@ -107,7 +110,8 @@ private fun LessonScreen() {
         6 -> R.string.lesson_six_concepts
         7 -> R.string.lesson_seven_concepts
         8 -> R.string.lesson_eight_concepts
-        else -> R.string.lesson_nine_concepts
+        9 -> R.string.lesson_nine_concepts
+        else -> R.string.lesson_ten_concepts
     }
     val runLabelRes = when (lessonNumber) {
         1 -> R.string.run_lesson
@@ -129,7 +133,8 @@ private fun LessonScreen() {
         6 -> R.string.lesson_six_exercise
         7 -> R.string.lesson_seven_exercise
         8 -> R.string.lesson_eight_exercise
-        else -> R.string.lesson_nine_exercise
+        9 -> R.string.lesson_nine_exercise
+        else -> R.string.lesson_ten_exercise
     }
 
     Scaffold { innerPadding ->
@@ -191,6 +196,11 @@ private fun LessonScreen() {
                     onClick = { lessonNumber = 9 },
                     label = { Text(stringResource(R.string.lesson_nine)) },
                 )
+                FilterChip(
+                    selected = lessonNumber == 10,
+                    onClick = { lessonNumber = 10 },
+                    label = { Text(stringResource(R.string.lesson_ten)) },
+                )
             }
             Text(
                 stringResource(titleRes),
@@ -211,42 +221,46 @@ private fun LessonScreen() {
                 }
             }
 
-            Button(
-                onClick = {
-                    output = when (lessonNumber) {
-                        1 -> runLesson01()
-                        2 -> runLesson02()
-                        3 -> runLesson03()
-                        4 -> runLesson04()
-                        5 -> runLesson05()
-                        6 -> runLesson06()
-                        7 -> runLesson07()
-                        8 -> runLesson08()
-                        else -> runLesson09()
-                    }
-                },
-                modifier = Modifier.fillMaxWidth(),
-            ) {
-                Text(stringResource(runLabelRes))
-            }
-
-            Text(stringResource(R.string.output_title), style = MaterialTheme.typography.titleMedium)
-            Card(modifier = Modifier.fillMaxWidth()) {
-                SelectionContainer {
-                    Text(
-                        text = output.ifEmpty { stringResource(R.string.output_placeholder) },
-                        modifier = Modifier.padding(20.dp),
-                        fontFamily = FontFamily.Monospace,
-                        style = MaterialTheme.typography.bodyLarge,
-                    )
+            if (lessonNumber == 10) {
+                Lesson10Content()
+            } else {
+                Button(
+                    onClick = {
+                        output = when (lessonNumber) {
+                            1 -> runLesson01()
+                            2 -> runLesson02()
+                            3 -> runLesson03()
+                            4 -> runLesson04()
+                            5 -> runLesson05()
+                            6 -> runLesson06()
+                            7 -> runLesson07()
+                            8 -> runLesson08()
+                            else -> runLesson09()
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Text(stringResource(runLabelRes))
                 }
-            }
-
-            OutlinedButton(
-                onClick = { output = "" },
-                enabled = output.isNotEmpty(),
-            ) {
-                Text(stringResource(R.string.clear_output))
+    
+                Text(stringResource(R.string.output_title), style = MaterialTheme.typography.titleMedium)
+                Card(modifier = Modifier.fillMaxWidth()) {
+                    SelectionContainer {
+                        Text(
+                            text = output.ifEmpty { stringResource(R.string.output_placeholder) },
+                            modifier = Modifier.padding(20.dp),
+                            fontFamily = FontFamily.Monospace,
+                            style = MaterialTheme.typography.bodyLarge,
+                        )
+                    }
+                }
+    
+                OutlinedButton(
+                    onClick = { output = "" },
+                    enabled = output.isNotEmpty(),
+                ) {
+                    Text(stringResource(R.string.clear_output))
+                }
             }
 
             Text(

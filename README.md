@@ -1,6 +1,6 @@
 # KotlinLearn：从零学习 Kotlin
 
-这个项目同时包含一个 Android App 和一个可在电脑上直接运行的 Kotlin 练习模块。它们共用同一份练习代码；没有手机或模拟器，也可以先学习 Kotlin。
+这个项目同时包含一个 Android App 和一个可在电脑上直接运行的 Kotlin 练习模块。前九课共用同一份练习代码；没有手机或模拟器，也可以先学习 Kotlin。第十课起的 Compose 界面位于 app 模块，可使用 Android Studio Preview 学习。
 
 ## 第一次使用
 
@@ -24,6 +24,8 @@
 [第八课：类、data class 与接口](docs/08-类数据类与接口.md) 用对象组织任务数据，理解属性、成员函数、复制与共同接口。练习文件是 `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson08/Lesson08.kt`。
 
 [第九课：Lambda 与扩展函数](docs/09-Lambda与扩展函数.md) 对照循环学习任务筛选、转换、统计和点号调用。练习文件是 `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson09/Lesson09.kt`。
+
+[第十课：Android 结构与 Compose 入门](docs/10-Android结构与Compose入门.md) 创建学习名片，认识 Activity、setContent、布局与预览。练习文件是 `app/src/main/java/com/example/kotlinlearn/lesson10/Lesson10Screen.kt`。
 
 ### 方式 A：在电脑上练习（无需 Android 设备）
 
@@ -112,11 +114,13 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 
 也可以在 `Lesson09.kt` 中运行 `main()`。本课导入第八课的 StudyTask，演示 filter、map、sumOf 和扩展函数。
 
+第十课是 Android 界面练习，没有 `:basics:runLesson10`。打开 `Lesson10Screen.kt`，选择 Split/Design 并刷新 Preview；也可按下面的方式运行 App。
+
 ### 方式 B：在 Android App 中练习
 
 1. 连接已开启 USB 调试的 Android 7.0 或更新版本手机，并在手机上允许调试；或在 Android Studio 的 Device Manager 中创建并启动模拟器。
 2. 在顶部选择 `app` 和目标设备，点击绿色 Run 按钮。
-3. App 顶部可选择 **第一课** 到 **第九课**，再点击相应的运行按钮。首次打开默认显示第九课，切换课程会清空旧结果；课程按钮区域可以横向滚动。
+3. App 顶部可选择 **第一课** 到 **第十课**。前九课点击运行按钮查看结果；第十课直接显示学习名片。首次打开默认显示第十课，已有会话可能恢复之前的课程；课程按钮区域可以横向滚动。
 4. 修改各课的 Kotlin 源文件后，需要再次 Run 来重新构建安装；已经安装的 App 不会自动读取电脑上的源码。
 
 ## 今天需要认识的文件
@@ -141,8 +145,10 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 | `docs/08-类数据类与接口.md` | 第八课讲解、复制与对象练习 |
 | `basics/src/main/kotlin/com/example/kotlinlearn/basics/lesson09/Lesson09.kt` | 第九课：Lambda、任务筛选与扩展函数 |
 | `docs/09-Lambda与扩展函数.md` | 第九课讲解、循环对照与统计练习 |
+| `app/src/main/java/com/example/kotlinlearn/lesson10/Lesson10Screen.kt` | 第十课：学习名片和两种 Compose 预览 |
+| `docs/10-Android结构与Compose入门.md` | Android 结构、布局与预览教程 |
 | `docs/学习路线.md` | 后续学习顺序 |
-| `app/src/main/java/com/example/kotlinlearn/MainActivity.kt` | Android 界面，先保持原样 |
+| `app/src/main/java/com/example/kotlinlearn/MainActivity.kt` | Android 入口与课程选择，第十课开始阅读 |
 | `app/src/main/AndroidManifest.xml` | Android 应用和启动页面的声明 |
 | `app/build.gradle.kts` | Android 构建配置，暂时不需要修改 |
 
