@@ -82,3 +82,12 @@ tasks.register<JavaExec>("runLesson08") {
     mainClass.set("com.example.kotlinlearn.basics.lesson08.Lesson08Kt")
     jvmArgs("-Dfile.encoding=UTF-8")
 }
+
+tasks.register<JavaExec>("runLesson09") {
+    group = "application"
+    description = "运行第九课：Lambda 与扩展函数"
+    dependsOn(tasks.named("classes"))
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("com.example.kotlinlearn.basics.lesson09.Lesson09Kt")
+    jvmArgs("-Dfile.encoding=UTF-8")
+}

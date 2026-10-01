@@ -53,4 +53,10 @@
     <string name="lesson_eight_concepts">class：定义对象的属性与行为。\ndata class：适合保存数据，自动提供比较和复制等功能。\ncopy：创建新对象，原对象保持原来的值。\ninterface：约定共同能力，用 override 实现。\n\n本例中 == 比较数据，=== 比较是否同一个对象。</string>
     <string name="run_lesson_eight">运行第八课</string>
     <string name="lesson_eight_exercise">动手练习：打开 Lesson08.kt，把 task 的 minutes 从 20 改成 30，观察副本和剩余时间。\n\n再把任务列表中的 task 改成 finishedTask，先预测剩余时间，再重新构建运行。示例课数从 0 开始，不代表实际学习进度。</string>
+    <string name="lesson_nine">第九课</string>
+    <string name="lesson_nine_title">第 9 课 · Lambda 与扩展函数</string>
+    <string name="lesson_nine_intro">把循环中的判断写成 Lambda，用 filter、map 和 sumOf 筛选、转换并统计任务。</string>
+    <string name="lesson_nine_concepts">Lambda：可传给函数的函数表达式。\nit：这里指 Lambda 的唯一参数。\nfilter：保留符合条件的元素。\nmap：把每个元素转换成新结果。\nsumOf：按指定数值求和。\n扩展函数：在类外定义，可用点号调用。</string>
+    <string name="run_lesson_nine">运行第九课</string>
+    <string name="lesson_nine_exercise">动手练习：打开 Lesson09.kt，把 availableMinutes 依次改成 20、10、0，先预测可完成的待办，再运行。\n\n把“运行 App”标为已完成，观察剩余时间。源码修改后需要重新构建 App。</string>
 </resources>
