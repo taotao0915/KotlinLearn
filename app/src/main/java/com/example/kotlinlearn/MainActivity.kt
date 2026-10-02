@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
@@ -44,9 +45,10 @@ import com.example.kotlinlearn.basics.lesson07.runLesson07
 import com.example.kotlinlearn.basics.lesson08.runLesson08
 import com.example.kotlinlearn.basics.lesson09.runLesson09
 import com.example.kotlinlearn.lesson10.Lesson10Content
+import com.example.kotlinlearn.lesson11.Lesson11Content
 
 // 这里是 Android 入口与课程选择页面，第十课开始学习它的界面结构。
-// 前九课在 basics 模块；第十课的名片在 app 模块的 lesson10/Lesson10Screen.kt。
+// 前九课在 basics 模块；名片和待办页面分别在 app 的 lesson10、lesson11 目录。
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,8 +75,8 @@ internal fun KotlinLearnTheme(content: @Composable () -> Unit) {
 
 @Composable
 private fun LessonScreen() {
-    // 这里是 Compose 的界面状态；学到 Android 界面时再详细讲解。
-    var lessonNumber by rememberSaveable { mutableIntStateOf(10) }
+    // 课程编号属于界面状态；第十一课开始学习状态与事件。
+    var lessonNumber by rememberSaveable { mutableIntStateOf(11) }
     // 切换课程时清空旧结果，避免把上一课的输出当成本课的结果。
     var output by rememberSaveable(lessonNumber) { mutableStateOf("") }
     val titleRes = when (lessonNumber) {
@@ -87,7 +89,8 @@ private fun LessonScreen() {
         7 -> R.string.lesson_seven_title
         8 -> R.string.lesson_eight_title
         9 -> R.string.lesson_nine_title
-        else -> R.string.lesson_ten_title
+        10 -> R.string.lesson_ten_title
+        else -> R.string.lesson_eleven_title
     }
     val introRes = when (lessonNumber) {
         1 -> R.string.lesson_intro
@@ -99,7 +102,8 @@ private fun LessonScreen() {
         7 -> R.string.lesson_seven_intro
         8 -> R.string.lesson_eight_intro
         9 -> R.string.lesson_nine_intro
-        else -> R.string.lesson_ten_intro
+        10 -> R.string.lesson_ten_intro
+        else -> R.string.lesson_eleven_intro
     }
     val conceptsRes = when (lessonNumber) {
         1 -> R.string.concepts_body
@@ -111,7 +115,8 @@ private fun LessonScreen() {
         7 -> R.string.lesson_seven_concepts
         8 -> R.string.lesson_eight_concepts
         9 -> R.string.lesson_nine_concepts
-        else -> R.string.lesson_ten_concepts
+        10 -> R.string.lesson_ten_concepts
+        else -> R.string.lesson_eleven_concepts
     }
     val runLabelRes = when (lessonNumber) {
         1 -> R.string.run_lesson
@@ -134,7 +139,8 @@ private fun LessonScreen() {
         7 -> R.string.lesson_seven_exercise
         8 -> R.string.lesson_eight_exercise
         9 -> R.string.lesson_nine_exercise
-        else -> R.string.lesson_ten_exercise
+        10 -> R.string.lesson_ten_exercise
+        else -> R.string.lesson_eleven_exercise
     }
 
     Scaffold { innerPadding ->
@@ -142,6 +148,7 @@ private fun LessonScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
+                .imePadding()
                 .verticalScroll(rememberScrollState())
                 .padding(24.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -201,6 +208,11 @@ private fun LessonScreen() {
                     onClick = { lessonNumber = 10 },
                     label = { Text(stringResource(R.string.lesson_ten)) },
                 )
+                FilterChip(
+                    selected = lessonNumber == 11,
+                    onClick = { lessonNumber = 11 },
+                    label = { Text(stringResource(R.string.lesson_eleven)) },
+                )
             }
             Text(
                 stringResource(titleRes),
@@ -221,7 +233,9 @@ private fun LessonScreen() {
                 }
             }
 
-            if (lessonNumber == 10) {
+            if (lessonNumber == 11) {
+                Lesson11Content()
+            } else if (lessonNumber == 10) {
                 Lesson10Content()
             } else {
                 Button(
@@ -242,7 +256,7 @@ private fun LessonScreen() {
                 ) {
                     Text(stringResource(runLabelRes))
                 }
-    
+
                 Text(stringResource(R.string.output_title), style = MaterialTheme.typography.titleMedium)
                 Card(modifier = Modifier.fillMaxWidth()) {
                     SelectionContainer {
@@ -254,7 +268,7 @@ private fun LessonScreen() {
                         )
                     }
                 }
-    
+
                 OutlinedButton(
                     onClick = { output = "" },
                     enabled = output.isNotEmpty(),

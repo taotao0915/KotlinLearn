@@ -69,4 +69,17 @@
     <string name="lesson_ten_goal">学习目标：%1$s</string>
     <string name="lesson_ten_daily_minutes">每天计划：%1$d 分钟</string>
     <string name="lesson_ten_card_hint">改一处代码，观察一次界面变化。</string>
+    <string name="lesson_eleven">第十一课</string>
+    <string name="lesson_eleven_title">第 11 课 · 可以操作的待办清单</string>
+    <string name="lesson_eleven_intro">输入任务、点击添加、勾选完成。观察数据改变后，列表和统计如何一起更新。</string>
+    <string name="lesson_eleven_concepts">mutableStateOf：让 Compose 观察状态。\nremember：在重组之间保留状态。\nonValueChange：收到新的输入。\nonClick：点击时执行操作。\n状态向下传，事件通过回调向上传。</string>
+    <string name="lesson_eleven_exercise">动手练习：添加两条同名任务，只勾选其中一条，观察待完成数量；再删除另一条。\n\n阅读 Lesson11Screen.kt：找到输入回调、添加回调和统计文字，画出事件到状态再到界面的过程。</string>
+    <string name="lesson_eleven_input_label">任务名称</string>
+    <string name="lesson_eleven_input_hint">例如：学习 Compose</string>
+    <string name="lesson_eleven_add">添加任务</string>
+    <string name="lesson_eleven_summary">共 %1$d 项，待完成 %2$d 项</string>
+    <string name="lesson_eleven_empty">还没有任务，先添加一项吧。</string>
+    <string name="lesson_eleven_delete">删除</string>
+    <string name="lesson_eleven_delete_description">删除任务：%1$s</string>
+    <string name="lesson_eleven_memory_note">本课任务只在当前页面内存中保留。切换课程或旋转屏幕后会重置。</string>
 </resources>

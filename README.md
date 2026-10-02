@@ -27,6 +27,8 @@
 
 [第十课：Android 结构与 Compose 入门](docs/10-Android结构与Compose入门.md) 创建学习名片，认识 Activity、setContent、布局与预览。练习文件是 `app/src/main/java/com/example/kotlinlearn/lesson10/Lesson10Screen.kt`。
 
+[第十一课：Compose 状态与待办清单](docs/11-Compose状态与待办清单.md) 练习输入、添加、勾选和删除。练习文件是 `app/src/main/java/com/example/kotlinlearn/lesson11/Lesson11Screen.kt`，数据逻辑在同目录的 `TodoState.kt`。
+
 ### 方式 A：在电脑上练习（无需 Android 设备）
 
 在 Android Studio 的 Terminal 中使用 PowerShell 执行：
@@ -116,11 +118,13 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 
 第十课是 Android 界面练习，没有 `:basics:runLesson10`。打开 `Lesson10Screen.kt`，选择 Split/Design 并刷新 Preview；也可按下面的方式运行 App。
 
+第十一课也没有控制台入口。运行 app 选择第十一课，或在 `Lesson11Screen.kt` 的待办交互预览中启用 Interactive Mode。任务暂存于当前页面内存，切换课程或旋转屏幕后重置。
+
 ### 方式 B：在 Android App 中练习
 
 1. 连接已开启 USB 调试的 Android 7.0 或更新版本手机，并在手机上允许调试；或在 Android Studio 的 Device Manager 中创建并启动模拟器。
 2. 在顶部选择 `app` 和目标设备，点击绿色 Run 按钮。
-3. App 顶部可选择 **第一课** 到 **第十课**。前九课点击运行按钮查看结果；第十课直接显示学习名片。首次打开默认显示第十课，已有会话可能恢复之前的课程；课程按钮区域可以横向滚动。
+3. App 顶部可选择 **第一课** 到 **第十一课**。前九课点击运行按钮查看结果；第十课显示学习名片，第十一课显示可操作的待办清单。首次打开默认显示第十一课，已有会话可能恢复之前的课程；课程按钮区域可以横向滚动。
 4. 修改各课的 Kotlin 源文件后，需要再次 Run 来重新构建安装；已经安装的 App 不会自动读取电脑上的源码。
 
 ## 今天需要认识的文件
@@ -147,6 +151,9 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 | `docs/09-Lambda与扩展函数.md` | 第九课讲解、循环对照与统计练习 |
 | `app/src/main/java/com/example/kotlinlearn/lesson10/Lesson10Screen.kt` | 第十课：学习名片和两种 Compose 预览 |
 | `docs/10-Android结构与Compose入门.md` | Android 结构、布局与预览教程 |
+| `app/src/main/java/com/example/kotlinlearn/lesson11/Lesson11Screen.kt` | 第十一课：输入、按钮、复选框与列表 |
+| `app/src/main/java/com/example/kotlinlearn/lesson11/TodoState.kt` | 待办数据与更新函数 |
+| `docs/11-Compose状态与待办清单.md` | 状态、回调与动手练习 |
 | `docs/学习路线.md` | 后续学习顺序 |
 | `app/src/main/java/com/example/kotlinlearn/MainActivity.kt` | Android 入口与课程选择，第十课开始阅读 |
 | `app/src/main/AndroidManifest.xml` | Android 应用和启动页面的声明 |
@@ -159,7 +166,7 @@ $env:JAVA_OPTS = "$env:JAVA_OPTS -Dfile.encoding=UTF-8"
 先按上面的命令设置当前终端的 `JAVA_HOME`，然后执行：
 
 ```powershell
-.\gradlew.bat :basics:run :basics:runLesson02 :basics:runLesson03 :basics:runLesson04 :basics:runLesson05 :basics:runLesson06 :basics:runLesson07 :basics:runLesson08 :basics:runLesson09 :app:assembleDebug :app:lintDebug --console=plain
+.\gradlew.bat :basics:run :basics:runLesson02 :basics:runLesson03 :basics:runLesson04 :basics:runLesson05 :basics:runLesson06 :basics:runLesson07 :basics:runLesson08 :basics:runLesson09 :app:testDebugUnitTest :app:assembleDebug :app:lintDebug --console=plain
 ```
 
 APK 生成位置：`app/build/outputs/apk/debug/app-debug.apk`。
